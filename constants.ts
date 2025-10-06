@@ -1,0 +1,81 @@
+import type { HistoricalEvent } from './types';
+
+export const HISTORICAL_EVENTS: HistoricalEvent[] = [
+  {
+    id: 'moon_landing',
+    name: 'Moon Landing',
+    description: '1969 - One small step for man, one giant leap for mankind.',
+    backgroundImageUrl: 'https://picsum.photos/seed/moon/400/300',
+    prompt: "A realistic photograph of the 1969 Apollo moon landing. An astronaut is planting a flag. Please realistically photoshop the person from the user's uploaded image into the scene as another astronaut, complete with a vintage-style spacesuit and helmet (face can be visible through visor). Match the photo's grainy, vintage quality and lighting.",
+  },
+  {
+    id: 'ancient_egypt',
+    name: 'Ancient Egypt',
+    description: 'Build pyramids and meet pharaohs in the land of the Nile.',
+    backgroundImageUrl: 'https://picsum.photos/seed/egypt/400/300',
+    prompt: "A vibrant, sun-drenched scene in ancient Egypt with the great pyramids in the background. Please realistically integrate the person from the user's uploaded image into the scene as an Egyptian royal or a high-ranking official. Their clothing should be replaced with historically accurate ancient Egyptian attire. The lighting and style should evoke a cinematic, historical epic.",
+  },
+  {
+    id: 'wild_west',
+    name: 'Wild West Saloon',
+    description: 'A dusty saloon showdown in the American Frontier.',
+    backgroundImageUrl: 'https://picsum.photos/seed/west/400/300',
+    prompt: "A classic, gritty Wild West saloon interior from the 1880s. Please place the person from the user's uploaded image into this scene. They could be a confident gunslinger, a card player, or a bartender. Their attire should be changed to period-appropriate western wear. The image should have a sepia tone and a dusty, cinematic feel.",
+  },
+  {
+    id: 'renaissance_italy',
+    name: 'Renaissance Italy',
+    description: 'Walk the streets of Florence with da Vinci and Michelangelo.',
+    backgroundImageUrl: 'https://picsum.photos/seed/renaissance/400/300',
+    prompt: "An elegant, detailed painting in the style of the Italian Renaissance. Please integrate the person from the user's uploaded image as the subject of a portrait by a master like Leonardo da Vinci or Raphael. Their features should be recognizable, but their clothing, hair, and the overall lighting should be transformed to mimic a classic Renaissance oil painting.",
+  },
+  {
+    id: 'roaring_twenties',
+    name: 'Roaring Twenties',
+    description: 'A glamorous Art Deco party with jazz and flapper dresses.',
+    backgroundImageUrl: 'https://picsum.photos/seed/twenties/400/300',
+    prompt: "A lavish, glamorous party scene from the Roaring Twenties, with Art Deco designs and a lively atmosphere. Please seamlessly blend the person from the user's uploaded image into the party as a guest. Change their outfit to a stylish 1920s flapper dress or a dapper suit. The final image should look like a black-and-white or subtly colorized photograph from that era.",
+  },
+  {
+    id: 'viking_age',
+    name: 'Viking Age',
+    description: 'Sail the seas and explore new lands as a Norse warrior.',
+    backgroundImageUrl: 'https://picsum.photos/seed/viking/400/300',
+    prompt: "A dramatic, rugged landscape of a Scandinavian fjord with a Viking longship in the water. Please transform the person from the user's uploaded image into a fierce Viking warrior. They should be wearing leather armor and furs. The lighting should be dramatic and cool-toned, evoking the harsh, beautiful Nordic environment. The final style should be a realistic, cinematic photograph.",
+  },
+  {
+    id: 'feudal_japan',
+    name: 'Feudal Japan',
+    description: 'Master the way of the samurai in feudal Japan.',
+    backgroundImageUrl: 'https://picsum.photos/seed/japan/400/300',
+    prompt: "A dramatic scene set in feudal Japan, with a traditional castle or cherry blossoms in the background. Please transform the person in the user's uploaded photo into a samurai warrior, replacing their clothes with detailed, authentic samurai armor. The style should be reminiscent of a classic Akira Kurosawa film, with cinematic lighting and a serious tone.",
+  },
+  {
+    id: 'roman_gladiator',
+    name: 'Roman Colosseum',
+    description: 'Hear the roar of the crowd in the Roman Colosseum.',
+    backgroundImageUrl: 'https://picsum.photos/seed/rome/400/300',
+    prompt: "A grand and imposing view of the Roman Colosseum from within, packed with spectators. Please place the person from the user's photo onto the arena floor as a powerful gladiator. Their attire should be replaced with historically inspired gladiator armor and gear. The image should have the epic, sun-baked feel of a historical drama film.",
+  },
+  {
+    id: 'woodstock_69',
+    name: "Woodstock '69",
+    description: 'Three days of peace, music, and love.',
+    backgroundImageUrl: 'https://picsum.photos/seed/woodstock/400/300',
+    prompt: "A vibrant, crowded scene from the 1969 Woodstock music festival. Please integrate the person from the user's uploaded photo into the crowd as a music fan. Their clothing should be changed to classic late-60s hippie fashion (tie-dye, bell-bottoms, headbands). The final image should look like a faded, color-rich Kodachrome photograph from that era.",
+  },
+  {
+    id: 'prehistoric_age',
+    name: 'Prehistoric Age',
+    description: 'Survive the Ice Age alongside mammoths.',
+    backgroundImageUrl: 'https://picsum.photos/seed/caveman/400/300',
+    prompt: "A rugged prehistoric landscape during the Ice Age, with a woolly mammoth in the distance. Please transform the person from the user's image into a cave dweller. Their clothing should be replaced with primitive furs and leathers. The lighting should be harsh and natural, and the overall style should be a gritty, realistic depiction of prehistoric life.",
+  },
+  {
+    id: 'belle_epoque',
+    name: 'Belle Époque Paris',
+    description: 'An evening of art and culture at the Moulin Rouge.',
+    backgroundImageUrl: 'https://picsum.photos/seed/paris/400/300',
+    prompt: "A lively, colorful scene outside a Parisian cafe or the Moulin Rouge during the Belle Époque (late 19th century), in the style of a Henri de Toulouse-Lautrec poster. Please place the person from the user's photo into this artistic scene. Their clothing should be changed to elegant, fashionable attire from that period. The final image should have a painterly, vibrant quality with bold outlines and colors.",
+  },
+];
