@@ -12,10 +12,10 @@ const Header: React.FC<HeaderProps> = ({ session, credits, onLogin, onLogout }) 
   return (
     <header className="w-full flex justify-between items-center p-4">
       <div className="text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-500 mb-2">
-          Temporal Fusion
+        <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-2">
+          Virtual Girlfriend
         </h1>
-        <p className="text-slate-400 text-lg">Travel through time with a single click.</p>
+        <p className="text-slate-400 text-lg">Create your perfect virtual companion.</p>
       </div>
       <div>
         {session ? (

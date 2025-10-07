@@ -1,5 +1,4 @@
-
-export interface HistoricalEvent {
+export interface VirtualGirlfriend {
   id: string;
   name: string;
   description: string;

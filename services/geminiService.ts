@@ -1,5 +1,5 @@
 
-import { GoogleGenAI, Modality, GenerateContentResponse } from "@google/genai";
+import { GoogleGenAI, Modality, GenerateContentResponse, Part } from "@google/genai";
 
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 if (!apiKey) {
@@ -7,26 +7,37 @@ if (!apiKey) {
 }
 const ai = new GoogleGenAI({ apiKey });
 
+interface ImagePart {
+  base64Data: string;
+  mimeType: string;
+}
+
 export const fuseWithHistory = async (
-  base64ImageData: string,
-  mimeType: string,
-  prompt: string
+  prompt: string,
+  images: ImagePart[] = []
 ): Promise<string | null> => {
   try {
+    const contentParts: Part[] = [];
+
+    // Add all image parts provided
+    for (const image of images) {
+      if (image.base64Data && image.mimeType) {
+        contentParts.push({
+          inlineData: {
+            data: image.base64Data,
+            mimeType: image.mimeType,
+          },
+        });
+      }
+    }
+
+    // Always add the text prompt
+    contentParts.push({ text: prompt });
+
     const response: GenerateContentResponse = await ai.models.generateContent({
       model: 'gemini-2.5-flash-image-preview',
       contents: {
-        parts: [
-          {
-            inlineData: {
-              data: base64ImageData,
-              mimeType: mimeType,
-            },
-          },
-          {
-            text: prompt,
-          },
-        ],
+        parts: contentParts,
       },
       config: {
         responseModalities: [Modality.IMAGE, Modality.TEXT],

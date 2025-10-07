@@ -62,7 +62,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onImageUpload, userImage }) => 
         onDrop={handleDrop}
         className={`w-full h-64 mt-2 flex justify-center items-center rounded-lg cursor-pointer transition-colors duration-300
         ${dragActive ? 'bg-slate-700' : 'bg-slate-800'}
-        ${userImage ? 'border-teal-500' : 'border-slate-500'}`}
+        ${userImage ? 'border-pink-500' : 'border-slate-500'}`}
       >
         {userImage ? (
           <img src={userImage} alt="User upload preview" className="max-h-full max-w-full object-contain rounded-md" />
