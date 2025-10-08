@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import type { Session } from '@supabase/supabase-js';
 
 interface HeaderProps {
@@ -9,13 +10,27 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ session, credits, onLogin, onLogout }) => {
+  const location = useLocation();
+  const isVirtualGirlfriendPage = location.pathname === '/virtual-girlfriend';
+
   return (
     <header className="w-full flex justify-between items-center p-4">
-      <div className="text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-2">
-          Virtual Girlfriend
-        </h1>
-        <p className="text-slate-400 text-lg">Create your perfect virtual companion.</p>
+      <div className="text-left">
+        {isVirtualGirlfriendPage ? (
+          <>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-1">
+              Virtual Girlfriend
+            </h1>
+            <p className="text-slate-400 text-md">Create your perfect virtual companion.</p>
+          </>
+        ) : (
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-1">
+              Innovation Hub
+            </h1>
+            <p className="text-slate-400 text-md">AI-Powered Applications</p>
+          </Link>
+        )}
       </div>
       <div>
         {session ? (

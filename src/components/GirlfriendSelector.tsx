@@ -1,5 +1,5 @@
 import React from 'react';
-import type { VirtualGirlfriend } from '../types';
+import type { VirtualGirlfriend } from '@/types';
 
 interface GirlfriendSelectorProps {
   preSetGirlfriends: VirtualGirlfriend[];
