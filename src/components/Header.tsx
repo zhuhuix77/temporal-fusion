@@ -17,12 +17,15 @@ const Header: React.FC<HeaderProps> = ({ session, credits, onLogin, onLogout }) 
     <header className="w-full flex justify-between items-center p-4">
       <div className="text-left">
         {isVirtualGirlfriendPage ? (
-          <>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-1">
+          <div>
+            <Link to="/" className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm mb-2 block">
+              &larr; Back to Hub
+            </Link>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-1">
               Virtual Girlfriend
             </h1>
-            <p className="text-slate-400 text-md">Create your perfect virtual companion.</p>
-          </>
+            <p className="text-slate-400 text-sm">Create your perfect virtual companion.</p>
+          </div>
         ) : (
           <Link to="/" style={{ textDecoration: 'none' }}>
             <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-1">
