@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import HomePage from './pages/HomePage';
 import VirtualGirlfriendPage from './pages/VirtualGirlfriendPage';
+import PricingPage from './pages/PricingPage';
+import VirtualPetPage from './pages/VirtualPetPage';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         path: "virtual-girlfriend",
         element: <VirtualGirlfriendPage />,
+      },
+      {
+        path: "pricing",
+        element: <PricingPage />,
+      },
+      {
+        path: "virtual-pet",
+        element: <VirtualPetPage />,
       },
     ],
   },

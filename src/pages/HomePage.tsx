@@ -22,21 +22,18 @@ const HomePage: React.FC = () => {
         </Link>
       </div>
 
-      {/* This is where you can add more app modules in the future */}
-      {/* 
-      <div className="mt-8 p-8 border border-cyan-500 rounded-xl shadow-lg bg-slate-800/50 w-full max-w-md">
-        <h2 className="text-3xl font-semibold mb-4">Future App #2</h2>
+      <div className="mt-8 p-8 border border-indigo-500 rounded-xl shadow-lg bg-slate-800/50 w-full max-w-md">
+        <h2 className="text-3xl font-semibold mb-4">AI Pet Portrait Generator</h2>
         <p className="text-slate-400 mb-6">
-          Description for the next amazing application.
+          Turn a photo of your pet into a stunning piece of art in one of many styles.
         </p>
-        <Link 
-          to="/app-2"
-          className="px-6 py-3 bg-cyan-500 text-white font-bold text-lg rounded-lg shadow-md hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105"
+        <Link
+          to="/virtual-pet"
+          className="px-6 py-3 bg-indigo-500 text-white font-bold text-lg rounded-lg shadow-md hover:bg-indigo-600 transition-all duration-300 transform hover:scale-105"
         >
-          Coming Soon
+          Launch App
         </Link>
-      </div> 
-      */}
+      </div>
     </main>
   );
 };

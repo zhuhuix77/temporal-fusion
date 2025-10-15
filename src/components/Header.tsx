@@ -12,33 +12,56 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ session, credits, onLogin, onLogout }) => {
   const location = useLocation();
   const isVirtualGirlfriendPage = location.pathname === '/virtual-girlfriend';
+  const isVirtualPetPage = location.pathname === '/virtual-pet';
+
+  const getHeaderContent = () => {
+    if (isVirtualGirlfriendPage) {
+      return (
+        <div>
+          <Link to="/" className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm mb-2 block">
+            &larr; Back to Hub
+          </Link>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-1">
+            Virtual Girlfriend
+          </h1>
+          <p className="text-slate-400 text-sm">Create your perfect virtual companion.</p>
+        </div>
+      );
+    }
+    if (isVirtualPetPage) {
+      return (
+        <div>
+          <Link to="/" className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm mb-2 block">
+            &larr; Back to Hub
+          </Link>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 mb-1">
+            AI Pet Portraits
+          </h1>
+          <p className="text-slate-400 text-sm">Turn your pet into a work of art.</p>
+        </div>
+      );
+    }
+    return (
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-1">
+          Innovation Hub
+        </h1>
+        <p className="text-slate-400 text-md">AI-Powered Applications</p>
+      </Link>
+    );
+  };
 
   return (
     <header className="w-full flex justify-between items-center p-4">
       <div className="text-left">
-        {isVirtualGirlfriendPage ? (
-          <div>
-            <Link to="/" className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm mb-2 block">
-              &larr; Back to Hub
-            </Link>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 mb-1">
-              Virtual Girlfriend
-            </h1>
-            <p className="text-slate-400 text-sm">Create your perfect virtual companion.</p>
-          </div>
-        ) : (
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-1">
-              Innovation Hub
-            </h1>
-            <p className="text-slate-400 text-md">AI-Powered Applications</p>
-          </Link>
-        )}
+        {getHeaderContent()}
       </div>
       <div>
         {session ? (
           <div className="flex items-center gap-4">
-            <span className="text-slate-300 font-semibold">Credits: {credits ?? '...'}</span>
+            <Link to="/pricing" className="text-slate-300 font-semibold hover:text-pink-400 transition-colors">
+              Credits: {credits ?? '...'}
+            </Link>
             <span className="text-slate-300">{session.user.email}</span>
             <button
               onClick={onLogout}
@@ -59,5 +82,6 @@ const Header: React.FC<HeaderProps> = ({ session, credits, onLogin, onLogout }) 
     </header>
   );
 };
+
 
 export default Header;
